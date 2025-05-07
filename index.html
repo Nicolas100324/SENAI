@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogos e Dicas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #ff4e50, #2c1c1c);
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(to right, #ff4e50, #fc913a);
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #fff;
+      text-shadow: 2px 2px #000;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+      background-color: #2a1414;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #ff4747;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .jogos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .jogo {
+      background-color: #3a1c1c;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      width: 180px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .jogo:hover {
+      transform: scale(1.05);
+      background-color: #472121;
+    }
+
+    .jogo img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .jogo p {
+      font-weight: bold;
+      color: yellow;
+    }
+
+    button {
+      background-color: #ff4747;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #e03c3c;
+    }
+
+    #dica {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #ffbfbf;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2a1414;
+      color: #ffbfbf;
+      border-top: 2px solid #ff4747;
+      font-weight: bold;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #ff7070;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #1e1e1e;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #ff4747;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 10px;
+      color: #fff;
+    }
+
+    .modal-content h3 {
+      color: #ff4747;
+      margin-bottom: 10px;
+    }
+
+    .close {
+      color: #ff4747;
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #fff;
+    }
+
+    /* Avaliação por Estrelas */
+    .avaliacao-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2a1414;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .avaliacao-container p {
+      margin: 0 0 8px 0;
+      color: #ffbfbf;
+      font-weight: bold;
+    }
+
+    .estrela {
+      font-size: 1.8rem;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Jogos e Dicas</h1>
+  <nav>
+    <a href="#jogos">Jogos</a>
+    <a href="#dicas">Dicas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<main>
+  <section id="jogos">
+    <h2>🎮 Jogos Populares</h2>
+    <div class="jogos-grid">
+      <div class="jogo" onclick="mostrarHistoria('Free Fire')">
+        <img src="C:\xampp\htdocs\nicolas\Projetos_organizados\assets\ff.teste.jpg" alt="Free Fire">
+        <p>Free Fire</p>
+      </div>
+      <div class="jogo" onclick="mostrarHistoria('Fortnite')">
+        <img src="C:\xampp\htdocs\nicolas\Projetos_organizados\assets\fortinite.teste.webp" alt="Fortnite">
+        <p>Fortnite</p>
+      </div>
+      <div class="jogo" onclick="mostrarHistoria('Call of Duty')">
+        <img src="C:\xampp\htdocs\nicolas\Projetos_organizados\assets\call-of-duty.teste.avif" alt="Call of Duty">
+        <p>Call of Duty</p>
+      </div>
+      <div class="jogo" onclick="mostrarHistoria('Valorant')">
+        <img src="C:\xampp\htdocs\nicolas\Projetos_organizados\assets\valorante.teste.jpg" alt="Valorant">
+        <p>Valorant</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dicas">
+    <h2>💡 Dicas de Gameplay</h2>
+    <p>Clique no botão abaixo para ver uma dica aleatória:</p>
+    <button onclick="mostrarDica()">Ver dica</button>
+    <p id="dica"></p>
+  </section>
+
+  <section id="contato">
+    <h2>📩 Contato</h2>
+    <p>Se você tiver sugestões ou quiser compartilhar suas dicas de jogo, entre em contato conosco!</p>
+    <p>Email: <a href="mailto:contato@jogosedicas.com" style="color: #ff7070;">contato@jogosedicas.com</a></p>
+  </section>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="fecharModal()">&times;</span>
+    <h3 id="tituloJogo"></h3>
+    <p id="textoHistoria"></p>
+  </div>
+</div>
+
+<!-- Avaliação -->
+<div class="avaliacao-container">
+  <p>Avalie nosso site:</p>
+  <span class="estrela" data-valor="1">&#9733;</span>
+  <span class="estrela" data-valor="2">&#9733;</span>
+  <span class="estrela" data-valor="3">&#9733;</span>
+  <span class="estrela" data-valor="4">&#9733;</span>
+  <span class="estrela" data-valor="5">&#9733;</span>
+</div>
+
+<footer>
+  <div class="social-links">
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">YouTube</a>
+  </div>
+  <p>© 2025 Jogos e Dicas - Todos os direitos reservados</p>
+</footer>
+
+<script>
+  const historias = {
+    "Free Fire": "Free Fire é um battle royale mobile lançado em 2017, onde jogadores lutam para sobreviver em uma ilha até restar apenas um vencedor.",
+    "Fortnite": "Fortnite combina construção e combate em um ambiente colorido e rápido, sendo um dos jogos mais populares desde 2017.",
+    "Call of Duty": "Call of Duty é uma franquia de tiro em primeira pessoa que simula combates militares, conhecida por seu realismo e intensidade.",
+    "Valorant": "Valorant é um jogo de tiro tático em equipes da Riot Games, que mistura elementos de Counter-Strike com heróis únicos."
+  };
+
+  function mostrarHistoria(nomeJogo) {
+    document.getElementById("tituloJogo").innerText = nomeJogo;
+    document.getElementById("textoHistoria").innerText = historias[nomeJogo];
+    document.getElementById("modal").style.display = "block";
+  }
+
+  function fecharModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  function mostrarDica() {
+    const dicas = [
+      "Use fones de ouvido para ouvir os passos dos inimigos.",
+      "Mantenha sempre cobertura nas trocas de tiro.",
+      "Customize a sensibilidade dos controles.",
+      "Jogue com amigos para melhorar a comunicação.",
+      "Não subestime armas de curto alcance como a MP40."
+    ];
+    const dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
+    document.getElementById("dica").innerText = dicaAleatoria;
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target == modal) {
+      fecharModal();
+    }
+  };
+
+  const estrelas = document.querySelectorAll('.estrela');
+  let nota = 0;
+
+  estrelas.forEach((estrela, index) => {
+    estrela.addEventListener('click', () => {
+      nota = index + 1;
+      estrelas.forEach((e, i) => {
+        e.style.color = i < nota ? 'gold' : '#ccc';
+      });
+    });
+
+    estrela.addEventListener('mouseover', () => {
+      estrelas.forEach((e, i) => {
+        e.style.color = i <= index ? 'gold' : '#ccc';
+      });
+    });
+
+    estrela.addEventListener('mouseout', () => {
+      estrelas.forEach((e, i) => {
+        e.style.color = i < nota ? 'gold' : '#ccc';
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
