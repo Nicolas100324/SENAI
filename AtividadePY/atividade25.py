@@ -1,6 +1,4 @@
-25. Hipotenusa (Teorema de Pitágoras)
-python
-CopiarEditar
+
 import math
 cateto1 = float(input("Cateto 1: "))
 cateto2 = float(input("Cateto 2: "))

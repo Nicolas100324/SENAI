@@ -1,7 +1,5 @@
 
-6. Quantidade total de refrigerante
-python
-CopiarEditar
+
 latas = int(input("Latas (350ml): "))
 g600 = int(input("Garrafas 600ml: "))
 g2l = int(input("Garrafas 2L: "))

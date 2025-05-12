@@ -1,6 +1,4 @@
-8. Altura do prédio pela sombra
-python
-CopiarEditar
+
 altura_pessoa = float(input("Sua altura (m): "))
 sombra_pessoa = float(input("Sombra da pessoa (m): "))
 sombra_predio = float(input("Sombra do prédio (m): "))

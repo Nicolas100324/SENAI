@@ -1,6 +1,4 @@
-15. Comissão + salário final
-python
-CopiarEditar
+
 salario_fixo = float(input("Salário fixo: "))
 vendas = float(input("Vendas: "))
 comissao = vendas * 0.04

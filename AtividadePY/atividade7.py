@@ -1,6 +1,4 @@
-7. Cofrinho do Pedrinho
-python
-CopiarEditar
+
 moedas = {
     0.01: int(input("Moedas de 1 centavo: ")),
     0.05: int(input("Moedas de 5 centavos: ")),

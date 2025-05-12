@@ -1,5 +1,4 @@
-sanduiches - Quantidade de ingredientes
-p
+
 sanduiches = int(input("Quantidade de sanduíches: "))
 queijo = (sanduiches * 2 * 50) / 1000
 presunto = (sanduiches * 1 * 50) / 1000

@@ -1,6 +1,4 @@
-23. Idade em anos, meses, dias, semanas
-python
-CopiarEditar
+
 ano_nasc = int(input("Ano de nascimento: "))
 ano_atual = int(input("Ano atual: "))
 anos = ano_atual - ano_nasc
